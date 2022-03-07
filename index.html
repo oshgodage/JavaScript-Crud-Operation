@@ -5,11 +5,14 @@
 </head>
 
 <body>
-    <table>
+<input type="text" id="searchInput"  placeholder="Search ..." title="Type in a name">
+<br>
+<button onclick="filterTable()">Search</button><button onclick="searchReset()">Reset</button>
+    <table id="dataTable">
         <tr>
             <td>
                 <form autocomplete="off" onsubmit="onFormSubmit()">
-                    <div>
+                    <div class="box">
                         <label for="productCode">Product Code</label>
                         <input type="text" name="productCode" id="productCode">
                     </div>
@@ -50,6 +53,7 @@
             </td>
         </tr>
     </table>
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./script.js">
+	</script>
 </body>
 </html>

@@ -71,3 +71,5 @@ button:hover{
     background:#4b99d8 ;
 }
 
+.d-none{
+	display: none !important

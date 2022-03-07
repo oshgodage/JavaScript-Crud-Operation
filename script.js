@@ -8,6 +8,7 @@ function onFormSubmit(e) {
 		}
         else{
             updateRecord(formData);
+			console.log(updateRecord(formData));
 		}
         resetForm();    
 }
@@ -36,6 +37,7 @@ function insertNewRecord(data) {
 		cell4.innerHTML = data.perPrice;
     cell4 = newRow.insertCell(4);
         cell4.innerHTML = `<button onClick="onEdit(this)">Edit</button> <button onClick="onDelete(this)">Delete</button>`;
+
 }
 
 //Edit the data
@@ -69,4 +71,37 @@ function resetForm() {
     document.getElementById("qty").value = '';
     document.getElementById("perPrice").value = '';
     selectedRow = null;
+}
+
+//Search the product 
+function filterTable() {
+  debugger;
+  let filter = searchInput.value.toUpperCase();
+  rows = dataTable.getElementsByTagName("tr");
+  let flag = false;
+
+  for (let row of rows) {
+    let cells = row.getElementsByTagName("td");
+    for (let cell of cells) {
+      if (cell.textContent.toUpperCase().indexOf(filter) > -1) {
+        if (filter) {
+          cell.style.backgroundColor = '';
+        }
+        flag = true;
+      } 
+    }
+    if (flag) {
+      row.style.display = "";
+    } else {
+      row.style.display = "none";
+    }
+
+    flag = false;
+  }
+}
+
+
+function searchReset(formData){
+	document.getElementById("searchInput").value = '';
+	document.getElementById("storeList").value = '';
 }
