@@ -103,5 +103,4 @@ function filterTable() {
 
 function searchReset(formData){
 	document.getElementById("searchInput").value = '';
-	document.getElementById("storeList").value = '';
 }
